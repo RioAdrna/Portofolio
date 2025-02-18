@@ -39,8 +39,7 @@ export default {
         {
           id: 6,
           name: "Codeigniter",
-          imageUrl:
-            "https://images.seeklogo.com/logo-png/51/1/codeigniter-logo-png_seeklogo-516101.png",
+          imageUrl: "https://codeigniter.com/assets/icons/44521256.png",
           status: "Intermediate",
         },
         // {
