@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "portofolio"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "portofolio-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

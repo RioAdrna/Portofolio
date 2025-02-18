@@ -27,7 +27,7 @@ export default {
           id: 4,
           name: "Javascript",
           imageUrl:
-            "https://cdn.icon-icons.com/icons2/2415/PNG/512/javascript_original_logo_icon_146455.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/768px-JavaScript-logo.png",
           status: "Advance",
         },
         // {
@@ -40,7 +40,7 @@ export default {
           id: 6,
           name: "Codeigniter",
           imageUrl:
-            "https://cdn-peanutsquare.b-cdn.net/wp-content/uploads/2022/11/codeigniter-logo.png",
+            "https://images.seeklogo.com/logo-png/51/1/codeigniter-logo-png_seeklogo-516101.png",
           status: "Intermediate",
         },
         // {
