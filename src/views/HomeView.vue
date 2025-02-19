@@ -39,7 +39,7 @@
         decoding="async"
         data-nimg="1"
         class="w-10/12 md:h-auto rounded-full border-4 border-amber-200 pict"
-        src="/img/rio4.jpg"
+        src="https://i.pinimg.com/564x/8e/e4/b3/8ee4b3fd0f77423f2e7c62fd8ccfed83.jpg"
       />
     </div>
   </main>
