@@ -39,12 +39,10 @@
         decoding="async"
         data-nimg="1"
         class="w-10/12 md:h-auto rounded-full border-4 border-amber-200 pict"
-        src="/img/rio7.jpg"
-      />
+        src="/img/rio6.jpg">
     </div>
   </main>
-</template>
-
+  </template>
 <script>
 export default {
   name: "HomeView",
