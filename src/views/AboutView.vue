@@ -144,7 +144,7 @@ export default {
           <p class="mb-3 md:mb-7 fadein-left fadeins-1">
             &nbsp; &nbsp; &nbsp; Hi everyone! My name is Rio Adriana. I'm a web
             developer from Bandung, West Java. I have 3 year of experience in
-            front-end web development. I really enjoy what I do right now, in my
+            full stack web development. I really enjoy what I do right now, in my
             opinion, creating programs is not just a job, but also an art that
             has aesthetic value
           </p>
