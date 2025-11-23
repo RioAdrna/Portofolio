@@ -9,8 +9,8 @@ export default {
           name: "Milia",
           imageUrl: "milia",
           status:
-            "Website HRD Managers, makes it easy to accept and reject workers.",
-          tech: "PHP, JavaScript ,Codeigniter 3 , Bootstrap 5",
+            "Manajemen Personalia — Sistem yang digunakan untuk mengelola data karyawan, mengatur tugas, memantau kinerja, serta mendukung proses administrasi sumber daya manusia dalam perusahaan.",
+          // tech: "PHP, JavaScript ,Codeigniter 3 , Bootstrap 5",
           github: "null",
           demo: "https://milia.redguardsecurity.com/",
         },
@@ -18,8 +18,8 @@ export default {
           id: 2,
           name: "Araveal",
           imageUrl: "game",
-          status: "The first game i made, this game like a Mario game.",
-          tech: "HTML, JavaScript",
+          status: "Game Platformer — Permainan 2D di mana pemain mengontrol karakter untuk melompat, menghindari rintangan, dan menyelesaikan level.",
+          // tech: "HTML, JavaScript",
           github: "null",
           demo: "null",
         },
@@ -27,8 +27,8 @@ export default {
           id: 3,
           name: "WeSaF Al-falah",
           imageUrl: "spp",
-          status: "My ujikom website and this is my second website.",
-          tech: "PHP, JavaScript ,Codeigniter 3 , Bootstrap 5",
+          status: "Sistem Pembayaran SPP — Website yang menyediakan platform untuk melakukan pembayaran SPP sekolah secara mudah dan terstruktur.",
+          // tech: "PHP, JavaScript ,Codeigniter 3 , Bootstrap 5",
           github: "null",
           demo: "null",
         },
@@ -37,21 +37,30 @@ export default {
           name: "Lemas Al-falah",
           imageUrl: "lms",
           status:
-            "This website is a learning management system website, to make it easier for students to get assignments and materials.",
-          tech: "PHP, JavaScript ,Codeigniter 3 , Bootstrap 5",
+            "Learning Management System — Website ini merupakan sistem manajemen pembelajaran yang memudahkan siswa dalam mendapatkan tugas dan materi pembelajaran.",
+          // tech: "PHP, JavaScript ,Codeigniter 3 , Bootstrap 5",
           github: "null",
           demo: "null",
         },
 
-        // {
-        //   id: 5,
-        //   name: 'SP2SE',
-        //   imageUrl: 'sp2se',
-        //   status: 'Sistem Percepatan Pelayanan Surat Elektronik, A web application to manage letters in the village.',
-        //   tech: 'Codeigniter 3, Bootstrap',
-        //   github: 'null',
-        //   demo: 'null'
-        // }
+        {
+          id: 5,
+          name: 'PSAB',
+          imageUrl: 'psab',
+          status: 'Sistem Pemantauan Sungai dan Air Bersih — Website yang memantau kebersihan sungai secara real-time.',
+          // tech: 'Codeigniter 3, Bootstrap',
+          github: 'null',
+          demo: 'null'
+        },
+        {
+          id: 6,
+          name: 'LingkunganKu',
+          imageUrl: 'lingkunganku',
+          status: 'Sistem Pengaduan Masyarakat — Website yang memudahkan masyarakat melaporkan berbagai masalah lingkungan di sekitar mereka.',
+          // tech: 'Codeigniter 3, Bootstrap',
+          github: 'null',
+          demo: 'null'
+        },
       ],
     };
   },
@@ -100,11 +109,11 @@ export default {
                   >
                     {{ item.status }}
                   </div>
-                  <div
+                  <!-- <div
                     class="w-full mt-4 text-normal text-sm text-left text-amber-200"
                   >
                     {{ item.tech }}
-                  </div>
+                  </div> -->
                   <div class="w-full flex justify-end">
                     <div
                       class="flex cursor-pointer items-end gap-2 text-primary"

@@ -8,13 +8,13 @@ export default {
           id: 1,
           name: "HTML",
           imageUrl: "https://cdn-icons-png.flaticon.com/512/1051/1051277.png",
-          status: "Advance",
+          status: "Expert",
         },
         {
           id: 2,
           name: "CSS",
           imageUrl: "https://cdn-icons-png.flaticon.com/512/732/732190.png",
-          status: "Advance",
+          status: "Expert",
         },
         {
           id: 3,
@@ -30,55 +30,79 @@ export default {
             "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/768px-JavaScript-logo.png",
           status: "Advance",
         },
-        // {
-        //   id: 5,
-        //   name: 'Laravel',
-        //   imageUrl: 'https://cdn.worldvectorlogo.com/logos/laravel-2.svg',
-        //   status: 'Advance'
-        // },
+        {
+          id: 5,
+          name: 'Laravel',
+          imageUrl: 'https://cdn.worldvectorlogo.com/logos/laravel-2.svg',
+          status: 'Advance'
+        },
         {
           id: 6,
           name: "Codeigniter",
           imageUrl: "https://codeigniter.com/assets/icons/44521256.png",
-          status: "Intermediate",
+          status: "Expert",
         },
-        // {
-        //   id: 7,
-        //   name: 'VueJS',
-        //   imageUrl: 'https://cdn.iconscout.com/icon/free/png-256/free-vue-282497.png?f=webp',
-        //   status: 'Intermediate'
-        // },
-        // {
-        //   id: 8,
-        //   name: 'AlpineJS',
-        //   imageUrl: 'https://avatars.githubusercontent.com/u/59030169?s=200&v=4',
-        //   status: 'Beginner'
-        // },
-        // {
-        //   id: 9,
-        //   name: 'NodeJS',
-        //   imageUrl: 'https://cdn.iconscout.com/icon/free/png-256/free-node-js-1174925.png',
-        //   status: 'Beginner'
-        // },
-        // {
-        //   id: 10,
-        //   name: 'Tailwind',
-        //   imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg',
-        //   status: 'Advance'
-        // },
+        {
+          id: 7,
+          name: 'VueJS',
+          imageUrl: 'https://cdn.iconscout.com/icon/free/png-256/free-vue-282497.png?f=webp',
+          status: 'Beginner'
+        },
+        {
+          id: 8,
+          name: 'React',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
+          status: 'Beginner'
+        },
+        {
+          id: 9,
+          name: 'NodeJS',
+          imageUrl: 'https://cdn.iconscout.com/icon/free/png-256/free-node-js-1174925.png',
+          status: 'Beginner'
+        },
+        {
+          id: 10,
+          name: 'Tailwind',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg',
+          status: 'Advance'
+        },
         {
           id: 11,
           name: "Bootstrap",
           imageUrl:
             "https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo-shadow.png",
-          status: "Intermediate",
+          status: "Expert",
         },
-        // {
-        //   id: 12,
-        //   name: 'ReactJS',
-        //   imageUrl: 'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png',
-        //   status: 'Beginner'
-        // }
+        {
+          id: 12,
+          name: 'Java',
+          imageUrl: 'https://www.vectorlogo.zone/logos/java/java-icon.svg',
+          status: 'Intermediate'
+        },
+        {
+          id: 13,
+          name: 'C++',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg',
+          status: 'Intermediate'
+        },
+        {
+          id: 14,
+          name: 'C#',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_C_sharp.svg',
+          status: 'Beginner'
+        },
+        {
+          id: 15,
+          name: 'C',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg',
+          status: 'Intermediate'
+        },
+        {
+          id: 16,
+          name: 'Python',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg',
+          status: 'Intermediate'
+        }
       ],
       tools: [
         {
@@ -144,18 +168,10 @@ export default {
   <!-- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -->
         <div class="md:w-7/12">
           <p class="mb-3 md:mb-7 fadein-left fadeins-1">
-            &nbsp; &nbsp; &nbsp; Hi everyone! My name is Rio Adriana. I'm a web
-            developer from Bandung, West Java. I have 3 year of experience in
-            full stack web development. I really enjoy what I do right now, in my
-            opinion, creating programs is not just a job, but also an art that
-            has aesthetic value
+            &nbsp; &nbsp; &nbsp; Hai semuanya! Nama saya Rio Adriana. Saya seorang web developer dari Bandung, Jawa Barat. Saya memiliki pengalaman 3 tahun dalam pengembangan web full stack. Saya sangat menikmati pekerjaan saya saat ini, karena menurut saya membuat sebuah program bukan hanya sekadar pekerjaan, tetapi juga sebuah seni yang memiliki nilai estetika.
           </p>
           <p class="mb-3 fadein-left fadeins-2">
-            &nbsp; &nbsp; &nbsp; My job is to build your website to be
-            functional and user-friendly yet still attractive. In addition, I
-            provide a personal touch to your product and ensure that the website
-            catches attention and is easy to use. My goal is to convey your
-            message and identity in the most creative way.
+            &nbsp; &nbsp; &nbsp; Tugas saya adalah membangun website yang tidak hanya berfungsi dengan baik, tetapi juga mudah digunakan dan tetap menarik secara visual. Saya selalu memberikan sentuhan personal pada setiap proyek untuk memastikan website Anda tampil menonjol dan nyaman diakses. Tujuan saya adalah menyampaikan pesan dan identitas Anda dengan cara yang kreatif dan efektif.
             <!-- If you are interested in hiring me,
             please contact the listed contact. -->
           </p>
