@@ -133,15 +133,15 @@ export default {
       <section
         class="text-sm md:text-lg text-justify flex flex-col gap-4 md:flex-row md:gap-8 md:justify-left md:items-center"
       >
-      &nbsp; &nbsp; &nbsp; &nbsp;
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
        <div class="flex justify-center">
   <img
-    class="w-64 md:w-72 rounded-full mb-3 fadein-up"
+    class="w-44 md:w-52 rounded-full mb-3 fadein-up"
     src="/img/r.jpg"
     alt="Foto"
   />
 </div>
-
+  <!-- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -->
         <div class="md:w-7/12">
           <p class="mb-3 md:mb-7 fadein-left fadeins-1">
             &nbsp; &nbsp; &nbsp; Hi everyone! My name is Rio Adriana. I'm a web
