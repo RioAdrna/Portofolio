@@ -21,10 +21,10 @@ const routes = [
     meta: { title: 'Portfolio' }
   },
   {
-    path: '/blog',
-    name: 'blog',
+    path: '/contact',
+    name: 'contact',
     component: () => import('../views/ContactView.vue'),
-    meta: { title: 'Blog' }
+    meta: { title: 'Contact' }
   },
   {
     path: '/read/:slug/:id',
