@@ -35,6 +35,9 @@
       class="py-3 px-6 rounded-lg bg-amber-200 text-black font-bold text-sm hover:bg-amber-300 transition duration-300 w-full md:w-fit disabled:opacity-50">
       {{ isSending ? 'Sending...' : 'Send Message' }}
     </button>
+    <br>
+    <br>
+    <br>
   </form>
           </div>
         </div>
