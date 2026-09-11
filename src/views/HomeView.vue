@@ -15,7 +15,7 @@
     </div>
     
     <p class="text-white pr-4 fade-in-from-left">
-      Welcome to My personal website. <span class="wave">👋🏼</span>
+      Welcome to my personal website. <span class="wave" aria-label="waving hand">&#128075;&#127997;</span>
     </p>
  <a 
   href="/cv/CV_RioAdriana.pdf" 
@@ -59,13 +59,12 @@ export default {
       this.tick();
     });
   },
+  beforeUnmount() {
+    clearTimeout(this.typewriterTimer);
+  },
   methods: {
     tick() {
-      let typewriter = this.$refs.typewriter;
-
-      if (!typewriter) {
-        return;
-      }
+      if (!this.$refs.typewriter) return;
 
       let i = this.loopNum % this.toRotate.length;
       let fullTxt = this.toRotate[i];
@@ -73,9 +72,6 @@ export default {
       this.txt = this.isDeleting
         ? fullTxt.substring(0, this.txt.length - 1)
         : fullTxt.substring(0, this.txt.length + 1);
-      typewriter.innerHTML = `<span class="wrap">${this.txt}</span>`;
-
-      let that = this;
       let delta = 200 - Math.random() * 100;
 
       if (this.isDeleting) {
@@ -91,9 +87,7 @@ export default {
         delta = 500;
       }
 
-      setTimeout(() => {
-        that.tick();
-      }, delta);
+      this.typewriterTimer = setTimeout(() => this.tick(), delta);
     },
   },
 };

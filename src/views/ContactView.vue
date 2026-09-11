@@ -56,12 +56,12 @@
             <div class="text-white text-md font-semibold">Contact Info</div>
             
             <div class="flex items-center gap-3 text-slate-300 hover:text-amber-200 cursor-pointer text-sm">
-              <span class="p-2 bg-[#1e1e1f] rounded-lg">📧</span>
-              <span>rioadrianaaa12@gmail.com</span>
+              <span class="p-2 bg-[#1e1e1f] rounded-lg" aria-hidden="true">&#9993;&#65039;</span>
+              <a href="mailto:rioadrianaaa12@gmail.com">rioadrianaaa12@gmail.com</a>
             </div>
             
             <div class="flex items-center gap-3 text-slate-300 hover:text-amber-200 cursor-pointer text-sm">
-              <span class="p-2 bg-[#1e1e1f] rounded-lg">📍</span>
+              <span class="p-2 bg-[#1e1e1f] rounded-lg" aria-hidden="true">&#128205;</span>
               <span>Bandung, Indonesia</span>
             </div>
 
@@ -69,9 +69,9 @@
             
             <div class="text-white text-md font-semibold">Socials</div>
             <div class="mt-3 flex flex-wrap gap-2">
-              <a href="https://github.com/RioAdrna" target="_blank" class="py-2 px-3 rounded-2xl bg-[#1e1e1f] hover:bg-white/20 text-white text-xs">GitHub</a>
-              <a href="https://www.linkedin.com/in/rio-adriana-548416215/" target="_blank" class="py-2 px-3 rounded-2xl bg-[#1e1e1f] hover:bg-white/20 text-white text-xs">LinkedIn</a>
-              <a href="https://www.instagram.com/rdrnnn._/" target="_blank" class="py-2 px-3 rounded-2xl bg-[#1e1e1f] hover:bg-white/20 text-white text-xs">Instagram</a>
+              <a href="https://github.com/RioAdrna" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-2xl bg-[#1e1e1f] hover:bg-white/20 text-white text-xs">GitHub</a>
+              <a href="https://www.linkedin.com/in/rio-adriana-548416215/" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-2xl bg-[#1e1e1f] hover:bg-white/20 text-white text-xs">LinkedIn</a>
+              <a href="https://www.instagram.com/rdrnnn._/" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-2xl bg-[#1e1e1f] hover:bg-white/20 text-white text-xs">Instagram</a>
             </div>
           </div>
         </div>
@@ -116,7 +116,7 @@ export default {
       try {
         const response = await axios.post('https://formspree.io/f/mwvwrbev', this.form);
         
-        if (response.status === 200) {
+        if (response.status >= 200 && response.status < 300) {
          Swal.fire({
   title: 'Success!',
   text: `Terima kasih ${this.form.name}, pesan kamu sudah Rio terima.`,

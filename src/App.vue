@@ -3,13 +3,13 @@
   <!-- This is an example component -->
   <div class="max-w-7xl mx-auto flex flex-col relative">
 
-    <nav class="max-w-7xl px-5 md:fixed top-0 z-[98] w-screen backdrop-blur-md bg-[#121212] bg-opacity-80">
+    <nav class="max-w-7xl px-5 md:fixed top-0 z-[98] w-full backdrop-blur-md bg-[#121212] bg-opacity-80">
       <div class="container mx-auto flex flex-wrap items-center justify-between">
         <button @click="redirectToHome" class="flex">
           <span class="self-center text-lg text-[#ffdb70] font-semibold whitespace-nowrap fadein-bot hover:text-amber-100">RioAdriana();</span>
         </button>
         <div class="flex md:order-2 fadein-bot">
-          <a href="https://github.com/RioAdrna"><img class="w-9 rounded-full" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.png" alt="github"></a>
+          <a href="https://github.com/RioAdrna" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><img class="w-9 rounded-full" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.png" alt="GitHub"></a>
         </div>
         <div class="hidden md:flex justify-between items-center w-full md:w-auto md:order-1" id="mobile-menu-3">
           <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
@@ -40,7 +40,7 @@
     </div>
   </div>
   <footer class="block md:hidden fixed bottom-0 left-0 right-0 rounded-t-3xl border border-[#383838] bg-[#121212] bg-opacity-80 backdrop-blur-md backdrop-opacity-90">
-  <nav class="flex justify-around py-4 text-xs">
+  <nav class="flex justify-around py-4 text-xs" aria-label="Mobile navigation">
     <router-link to="/" class="text-gray-300 hover:text-white">Home</router-link>
     <router-link to="/about" class="text-gray-300 hover:text-white">About</router-link>
     <router-link to="/portfolio" class="text-gray-300 hover:text-white">Portfolio</router-link>
@@ -92,7 +92,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 nav {
