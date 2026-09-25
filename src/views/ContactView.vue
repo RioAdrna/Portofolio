@@ -1,175 +1,19 @@
 <template>
-  <div class="container mx-auto p-3 md:p-8">
-    <div class="flex flex-col-reverse md:flex-row relative">
-      <div class="w-full md:w-2/3">
-        <div class="flex flex-col gap-4 md:px-20 fade-zoom-up">
-          <div class="bg-[#1e1e1f] border border-[#383838] rounded-xl p-6 md:p-10 text-white">
-            <h2 class="text-2xl font-bold text-amber-200 mb-6">Send Me a Message</h2>
-            
-<form 
-    action="https://formspree.io/f/mwvwrbev" 
-    method="POST" 
-    @submit.prevent="sendMessage" 
-    class="space-y-4"
-  >
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div>
-        <label class="text-xs text-slate-400 block mb-2">Full Name</label>
-        <input type="text" name="name" v-model="form.name" required placeholder="Your Name" 
-          class="w-full bg-[#282828] border border-[#383838] rounded-lg p-3 focus:outline-none focus:border-amber-200 text-sm text-white">
-      </div>
-      <div>
-        <label class="text-xs text-slate-400 block mb-2">Email Address</label>
-        <input type="email" name="email" v-model="form.email" required placeholder="Email Address" 
-          class="w-full bg-[#282828] border border-[#383838] rounded-lg p-3 focus:outline-none focus:border-amber-200 text-sm text-white">
-      </div>
-    </div>
-    
-    <div>
-      <label class="text-xs text-slate-400 block mb-2">Message</label>
-      <textarea name="message" v-model="form.message" required rows="5" placeholder="Your Message" 
-        class="w-full bg-[#282828] border border-[#383838] rounded-lg p-3 focus:outline-none focus:border-amber-200 text-sm text-white"></textarea>
-    </div>
-
-    <button type="submit" :disabled="isSending"
-      class="py-3 px-6 rounded-lg bg-amber-200 text-black font-bold text-sm hover:bg-amber-300 transition duration-300 w-full md:w-fit disabled:opacity-50">
-      {{ isSending ? 'Sending...' : 'Send Message' }}
-    </button>
-    <br>
-    <br>
-    <br>
-  </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-full md:w-1/3 h-fit p-8 md:sticky md:top-24">
-        <div class="flex flex-col text-left">
-          <div class="bg-clip-text bg-gradient-to-r from-slate-100 to-amber-300 text-transparent font-semibold text-lg">
-            Let's build something great together.
-          </div>
-          <p class="text-slate-400 text-sm mt-2">I'm open for collaboration, freelance projects, or just a friendly chat about tech.</p>
-          
-          <div class="h-[1px] mt-7 mb-7 w-20 bg-amber-200"></div>
-          
-          <div class="space-y-4">
-            <div class="text-white text-md font-semibold">Contact Info</div>
-            
-            <div class="flex items-center gap-3 text-slate-300 hover:text-amber-200 cursor-pointer text-sm">
-              <span class="p-2 bg-[#1e1e1f] rounded-lg" aria-hidden="true">&#9993;&#65039;</span>
-              <a href="mailto:rioadrianaaa12@gmail.com">rioadrianaaa12@gmail.com</a>
-            </div>
-            
-            <div class="flex items-center gap-3 text-slate-300 hover:text-amber-200 cursor-pointer text-sm">
-              <span class="p-2 bg-[#1e1e1f] rounded-lg" aria-hidden="true">&#128205;</span>
-              <span>Bandung, Indonesia</span>
-            </div>
-
-            <div class="h-[1px] mt-7 mb-7 w-20 bg-amber-200"></div>
-            
-            <div class="text-white text-md font-semibold">Socials</div>
-            <div class="mt-3 flex flex-wrap gap-2">
-              <a href="https://github.com/RioAdrna" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-2xl bg-[#1e1e1f] hover:bg-white/20 text-white text-xs">GitHub</a>
-              <a href="https://www.linkedin.com/in/rio-adriana-548416215/" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-2xl bg-[#1e1e1f] hover:bg-white/20 text-white text-xs">LinkedIn</a>
-              <a href="https://www.instagram.com/rdrnnn._/" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-2xl bg-[#1e1e1f] hover:bg-white/20 text-white text-xs">Instagram</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <main class="contact-page">
+    <section class="section-heading"><div><h1 class="section-title">Send me a <span>message</span></h1></div></section>
+    <section class="contact-layout"><div class="contact-form-card glass-panel"><div class="form-heading"><div><h2>Let's build something<br /><span>great together.</span></h2></div></div><form action="https://formspree.io/f/mwvwrbev" method="POST" @submit.prevent="sendMessage"><div class="input-row"><label><span>Full name</span><input v-model="form.name" type="text" name="name" placeholder="Your name" required /></label><label><span>Email address</span><input v-model="form.email" type="email" name="email" placeholder="you@email.com" required /></label></div><label><span>Message</span><textarea v-model="form.message" name="message" rows="5" placeholder="Tell me a little about your idea..." required></textarea></label><button class="send-button" type="submit" :disabled="isSending"><span>{{ isSending ? 'Sending...' : 'Send message' }}</span><b>↗</b></button></form></div>
+      <aside class="contact-aside"><div class="availability"><span class="status-dot"></span><div><strong>Currently available</strong><small>for freelance &amp; collaborations</small></div></div><div class="contact-detail"><span class="detail-label">Email</span><a href="mailto:rioadrianaaa12@gmail.com">rioadrianaaa12@gmail.com</a></div><div class="contact-detail"><span class="detail-label">Location</span><span>Bandung, Indonesia</span></div><div class="contact-detail"><span class="detail-label">Social</span><div class="social-links"><a href="https://github.com/RioAdrna" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/rio-adriana-548416215/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://www.instagram.com/rdrnnn._/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></div></aside>
+    </section>
+  </main>
 </template>
 
 <script>
 import axios from 'axios';
 import Swal from 'sweetalert2';
-
-export default {
-  data() {
-    return {
-      isSending: false,
-      form: {
-        name: '',
-        email: '',
-        message: ''
-      }
-    }
-  },
-  methods: {
-    async sendMessage() {
-      this.isSending = true;
-
-      Swal.fire({
-        title: 'Sending Message...',
-        text: 'Please wait a moment',
-        background: '#1e1e1f',
-        color: '#fff',
-        allowOutsideClick: false,
-        showConfirmButton: false,
-        didOpen: () => {
-          Swal.showLoading();
-          const loader = Swal.getHtmlContainer().querySelector('.swal2-loader');
-          if (loader) loader.style.borderTopColor = '#fde68a'; // Warna amber-200
-        }
-      });
-
-      try {
-        const response = await axios.post('https://formspree.io/f/mwvwrbev', this.form);
-        
-        if (response.status >= 200 && response.status < 300) {
-         Swal.fire({
-  title: 'Success!',
-  text: `Terima kasih ${this.form.name}, pesan kamu sudah Rio terima.`,
-  icon: 'success',
-  background: '#1e1e1f',
-  color: '#fff',
-  iconColor: '#fde68a',
-  confirmButtonText: 'Ok!',
-  buttonsStyling: true, 
-  customClass: {
-    popup: 'rounded-xl border border-[#383838]',
-    confirmButton: 'custom-swal-button' 
-  },
-  didOpen: () => {
-    const confirmButton = Swal.getConfirmButton();
-    confirmButton.style.backgroundColor = '#fde68a';
-    confirmButton.style.color = '#000';
-    confirmButton.style.fontWeight = 'bold';
-    confirmButton.style.border = 'none';
-    confirmButton.style.boxShadow = 'none'; 
-  }
-});
-          this.form = { name: '', email: '', message: '' };
-        }
-      } catch (error) {
-        Swal.fire({
-          title: 'Error!',
-          text: 'Gagal mengirim pesan. Coba lagi nanti ya.',
-          icon: 'error',
-          background: '#1e1e1f',
-          color: '#fff',
-          confirmButtonColor: '#ef4444',
-        });
-      } finally {
-        this.isSending = false;
-      }
-    }
-  }
-}
+export default { name: 'ContactView', data() { return { isSending: false, form: { name: '', email: '', message: '' } }; }, methods: { async sendMessage() { this.isSending = true; try { const response = await axios.post('https://formspree.io/f/mwvwrbev', this.form); if (response.status >= 200 && response.status < 300) { await Swal.fire({ title: 'Message sent', text: `Thank you ${this.form.name}, Rio has received your message.`, icon: 'success', confirmButtonText: 'Nice', background: 'var(--surface-strong)', color: 'var(--text)', confirmButtonColor: '#ffdb70' }); this.form = { name: '', email: '', message: '' }; } } catch (error) { await Swal.fire({ title: 'Something went wrong', text: 'Your message could not be sent. Please try again later.', icon: 'error', confirmButtonText: 'Try again', confirmButtonColor: '#ffdb70' }); } finally { this.isSending = false; } } } };
 </script>
 
 <style scoped>
-@keyframes fadeZoomUp {
-  0% {
-    opacity: 0;
-    transform: scale(0.95) translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-.fade-zoom-up {
-  animation: fadeZoomUp 0.8s ease-out;
-}
+.contact-page { padding: 1rem 0 3rem; text-align: left; }.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 1.7rem; }.section-eyebrow { margin: 0 0 .4rem; color: var(--accent); font-size: .68rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }.section-title { margin: 0; color: var(--text); font-family: 'Poppins'; font-size: clamp(2.2rem, 5vw, 4.4rem); font-weight: 600; letter-spacing: -.07em; line-height: 1; }.section-title span, .form-heading h2 span { color: var(--accent); }.section-note { margin: 0; color: var(--muted); font-size: .8rem; line-height: 1.6; text-align: right; }.contact-layout { display: grid; grid-template-columns: 1.35fr .65fr; gap: 1rem; align-items: start; }.contact-form-card { padding: clamp(1.2rem, 4vw, 2.2rem); border-radius: 27px; }.form-heading { display: flex; align-items: start; justify-content: space-between; margin-bottom: 2rem; }.form-kicker { margin: 0 0 .5rem; color: var(--accent); font-size: .68rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }.form-heading h2 { margin: 0; color: var(--text); font-family: 'Poppins'; font-size: clamp(1.4rem, 3vw, 2.3rem); font-weight: 600; line-height: 1.1; letter-spacing: -.06em; }.form-number { color: var(--muted); font-size: .65rem; letter-spacing: .1em; }.input-row { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }label { display: block; margin-bottom: 1rem; }label > span { display: block; margin: 0 0 .45rem; color: var(--muted); font-size: .67rem; font-weight: 600; }input, textarea { display: block; width: 100%; border: 1px solid var(--line); border-radius: 13px; outline: 0; padding: .8rem .9rem; color: var(--text); background: rgba(0,0,0,.08); font-size: .8rem; transition: border-color .3s ease, background .3s ease, box-shadow .3s ease; }input::placeholder, textarea::placeholder { color: var(--muted); opacity: .65; }input:focus, textarea:focus { border-color: var(--accent); background: var(--surface-hover); box-shadow: 0 0 0 4px rgba(255,219,112,.1); }textarea { resize: vertical; min-height: 122px; }.send-button { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: .5rem; padding: .85rem 1rem; border: 0; border-radius: 14px; color: var(--accent-ink); background: var(--accent); cursor: pointer; font-size: .78rem; font-weight: 700; transition: transform .3s ease, box-shadow .3s ease, opacity .3s ease; }.send-button:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 12px 22px rgba(255,219,112,.15); }.send-button:disabled { cursor: wait; opacity: .55; }.send-button b { font-size: 1.1rem; }.contact-aside { display: flex; flex-direction: column; gap: 1.4rem; padding: .8rem .8rem .8rem 1.2rem; }.availability { display: flex; align-items: center; gap: .7rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--line); }.availability strong, .availability small { display: block; }.availability strong { color: var(--text); font-size: .8rem; }.availability small { margin-top: .25rem; color: var(--muted); font-size: .65rem; }.contact-detail { display: flex; flex-direction: column; gap: .35rem; }.detail-label { color: var(--accent); font-size: .62rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }.contact-detail > a, .contact-detail > span:not(.detail-label) { color: var(--muted-strong); font-size: .8rem; }.contact-detail > a:hover, .social-links a:hover { color: var(--accent); }.social-links { display: flex; flex-wrap: wrap; gap: .5rem; }.social-links a { padding: .55rem .7rem; border: 1px solid var(--line); border-radius: 10px; color: var(--muted-strong); background: var(--surface); font-size: .67rem; transition: color .3s ease, transform .3s ease, border-color .3s ease; }.social-links a:hover { transform: translateY(-2px); border-color: var(--line-strong); }
+@media (max-width: 760px) { .contact-page { padding-top: .5rem; }.section-heading { align-items: start; flex-direction: column; gap: 1rem; }.section-note { text-align: left; }.contact-layout { grid-template-columns: 1fr; }.contact-form-card { border-radius: 22px; }.contact-aside { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem .8rem; padding: .7rem .2rem; }.availability, .contact-detail:last-child { grid-column: span 2; }.input-row { grid-template-columns: 1fr; gap: 0; } }
 </style>

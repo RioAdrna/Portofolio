@@ -1,213 +1,74 @@
+<template>
+  <main class="work-page">
+    <section class="section-heading"><h1 class="section-title">Past project <span>experience</span></h1></section>
+
+    <section class="portfolio-carousel" tabindex="0" aria-label="Portfolio projects carousel" @keydown.left.prevent="previousProject" @keydown.right.prevent="nextProject">
+      <div class="carousel-stage" @pointerdown="startDrag" @pointerup="finishDrag" @pointercancel="cancelDrag" @pointerleave="finishDrag">
+        <article v-for="(item, index) in items" :key="item.id" class="project-slide glass-panel" :class="{ active: index === activeIndex }" :style="cardStyle(index)" @click="selectProject(index)">
+          <div class="project-image"><img :src="item.image" :alt="item.name" loading="lazy" /></div>
+        </article>
+      </div>
+
+      <div class="carousel-controls"><button class="carousel-arrow" type="button" aria-label="Previous project" @click="previousProject">←</button><span>{{ String(activeIndex + 1).padStart(2, '0') }} / {{ String(items.length).padStart(2, '0') }}</span><button class="carousel-arrow" type="button" aria-label="Next project" @click="nextProject">→</button></div>
+
+      <article class="project-info glass-panel"><div class="project-info-top"><p class="project-type">{{ activeProject.type }}</p><span class="project-year">{{ activeProject.year }}</span></div><div class="project-info-title"><h2>{{ activeProject.name }}</h2><a v-if="activeProject.demo !== 'null'" :href="activeProject.demo" target="_blank" rel="noreferrer">View project ↗</a></div><p>{{ activeProject.status }}</p><div class="project-dots" aria-label="Choose a project"><button v-for="(item, index) in items" :key="item.id" type="button" :class="{ active: index === activeIndex }" :aria-label="'Show ' + item.name" :aria-current="index === activeIndex ? 'true' : undefined" @click="selectProject(index)"></button></div></article>
+    </section>
+  </main>
+</template>
+
 <script>
 export default {
+  name: 'PortfolioView',
   data() {
     return {
-      activeTab: 1,
+      activeIndex: 0,
+      dragStartX: null,
+      isDragging: false,
       items: [
-        {
-          id: 1,
-          name: "Milia",
-          imageUrl: "milia",
-          status:
-            "Manajemen Personalia — Sistem yang digunakan untuk mengelola data karyawan, mengatur tugas, memantau kinerja, serta mendukung proses administrasi sumber daya manusia dalam perusahaan.",
-          // tech: "PHP, JavaScript ,Codeigniter 3 , Bootstrap 5",
-          github: "null",
-          demo: "https://milia.redguardsecurity.com/",
-        },
-        {
-          id: 2,
-          name: "Araveal",
-          imageUrl: "game",
-          status: "Game Platformer — Permainan 2D di mana pemain mengontrol karakter untuk melompat, menghindari rintangan, dan menyelesaikan level.",
-          // tech: "HTML, JavaScript",
-          github: "null",
-          demo: "null",
-        },
-        {
-          id: 3,
-          name: "WeSaF Al-falah",
-          imageUrl: "spp",
-          status: "Sistem Pembayaran SPP — Website yang menyediakan platform untuk melakukan pembayaran SPP sekolah secara mudah dan terstruktur.",
-          // tech: "PHP, JavaScript ,Codeigniter 3 , Bootstrap 5",
-          github: "null",
-          demo: "null",
-        },
-        {
-          id: 4,
-          name: "Lemas Al-falah",
-          imageUrl: "lms",
-          status:
-            "Learning Management System — Website ini merupakan sistem manajemen pembelajaran yang memudahkan siswa dalam mendapatkan tugas dan materi pembelajaran.",
-          // tech: "PHP, JavaScript ,Codeigniter 3 , Bootstrap 5",
-          github: "null",
-          demo: "null",
-        },
-
-        {
-          id: 5,
-          name: 'PSAB',
-          imageUrl: 'psab',
-          status: 'Sistem Pemantauan Sungai dan Air Bersih — Website yang memantau kebersihan sungai secara real-time.',
-          // tech: 'Codeigniter 3, Bootstrap',
-          github: 'null',
-          demo: 'null'
-        },
-        {
-          id: 6,
-          name: 'LingkunganKu',
-          imageUrl: 'lingkunganku',
-          status: 'Sistem Pengaduan Masyarakat — Website yang memudahkan masyarakat melaporkan berbagai masalah lingkungan di sekitar mereka.',
-          // tech: 'Codeigniter 3, Bootstrap',
-          github: 'null',
-          demo: 'null'
-        },
-          {
-          id: 7,
-          name: 'StuntCheck',
-          imageUrl: 'stuntcheck',
-          status: 'StuntCheck — Sistem cerdas berbasis AI yang memudahkan deteksi dini risiko stunting melalui analisis antropometri digital berdasarkan pertumbuhan tinggi badan dan usia balita.',
-          // tech: 'Codeigniter 3, Bootstrap',
-          github: 'null',
-          demo: 'null'
-        },
+        { id: 1, name: 'Milia', image: '/img/portfolio-milia.png', type: 'HR management system', year: '2024', status: 'A system for managing employee data, tasks, performance, and human resource administration.', demo: 'https://milia.redguardsecurity.com/' },
+        { id: 2, name: 'Araveal', image: '/img/portfolio-game.png', type: '2D platformer game', year: '2023', status: 'A 2D platformer with a character, obstacles, and levels designed to feel fun to play.', demo: 'null' },
+        { id: 3, name: 'WeSaF Al-falah', image: '/img/portfolio-spp.png', type: 'Payment platform', year: '2023', status: 'A simple and structured platform for managing school tuition payments.', demo: 'null' },
+        { id: 4, name: 'Lemas Al-falah', image: '/img/portfolio-lms.png', type: 'Learning management', year: '2023', status: 'A learning management system that helps students access assignments and study materials.', demo: 'null' },
+        { id: 5, name: 'PSAB', image: '/img/portfolio-psab.png', type: 'Environmental monitoring', year: '2022', status: 'A real-time monitoring system for river cleanliness and clean water conditions.', demo: 'null' },
+        { id: 6, name: 'LingkunganKu', image: '/img/portfolio-lingkunganku.png', type: 'Public service', year: '2022', status: 'A public complaint platform for reporting environmental issues nearby.', demo: 'null' },
+        { id: 7, name: 'StuntCheck', image: '/img/portfolio-stuntcheck.png', type: 'AI-powered health system', year: '2024', status: 'Early stunting risk detection through digital anthropometric analysis.', demo: 'null' },
+        { id: 8, name: 'SmartFinance', image: '/img/portfolio-smartfinance.png', type: 'Personal finance platform', year: '2026', status: 'A finance management platform for tracking income, expenses, and everyday financial goals.', demo: 'null' },
+        { id: 9, name: 'Tani Bijak', image: '/img/portfolio-tanibijak.jpeg', type: 'Agriculture platform', year: '2026', status: 'A digital platform that supports smarter farming decisions and agricultural information.', demo: 'null' },
+        { id: 10, name: 'PresenPro', image: '/img/portfolio-presenpro.png', type: 'Dynamic QR attendance system', year: '2026', status: 'An attendance system that uses dynamic QR codes to make check-ins more secure, practical, and easy to monitor.', demo: 'null' },
       ],
     };
   },
+  computed: {
+    activeProject() { return this.items[this.activeIndex]; },
+  },
+  methods: {
+    cardStyle(index) {
+      let offset = index - this.activeIndex;
+      const total = this.items.length;
+      if (offset > total / 2) offset -= total;
+      if (offset < -total / 2) offset += total;
+      const visible = Math.abs(offset) <= 2;
+      return {
+        '--card-offset': offset,
+        '--card-scale': 1 - (Math.min(Math.abs(offset), 2) * 0.075),
+        zIndex: visible ? 10 - Math.abs(offset) : 0,
+        opacity: visible ? 1 : 0,
+        pointerEvents: visible ? 'auto' : 'none',
+      };
+    },
+    selectProject(index) { if (index !== this.activeIndex) this.activeIndex = index; },
+    nextProject() { this.activeIndex = (this.activeIndex + 1) % this.items.length; },
+    previousProject() { this.activeIndex = (this.activeIndex - 1 + this.items.length) % this.items.length; },
+    startDrag(event) { this.dragStartX = event.clientX; this.isDragging = true; event.currentTarget.setPointerCapture?.(event.pointerId); },
+    finishDrag(event) { if (!this.isDragging || this.dragStartX === null) return; const distance = event.clientX - this.dragStartX; if (Math.abs(distance) > 45) distance < 0 ? this.nextProject() : this.previousProject(); this.cancelDrag(); },
+    cancelDrag() { this.dragStartX = null; this.isDragging = false; },
+  },
 };
 </script>
-<template>
-  <div class="px-5 py-5 md:px-12 md:py-10 text-left text-amber-50 mx-3">
-    <article data-page="about">
-      <header>
-        <div
-          class="text-2xl font-bold text-white mb-10 fadein-bot title-section flex items-center justify-center flex-col"
-        >
-          <!-- <div class="h-[1px] w-10 bg-amber-200 md:w-20 aos-init aos-animate"></div> -->
-          <h4>Past Project Experience</h4>
-        </div>
-      </header>
-      <section>
-        <div>
-          <div
-            class="grid grid-cols-1 gap-4 pb-32 md:grid-cols-3 md:gap-3 xl:grid-cols-3 xl:gap-3 2xl:gap-5 fade-zoom-in"
-          >
-            <div v-for="item in items" :key="item.id">
-              <div
-                class="item-card flex flex-col items-center gap-2 rounded bg-[#1e1e1f] hover:bg-[#282828] border border-[#383838] rounded-xl text-amber-50 md:gap-3 px-5 py-5 lg:px-5"
-              >
-                <div
-                  class="flex h-12 w-12 items-center justify-center p-0 h-full w-full lg:p-0 zoom-in"
-                >
-                  <img
-                    alt="HTML"
-                    loading="lazy"
-                    decoding="async"
-                    data-nimg="1"
-                    class="drop-shadow-xl rounded rounded-xl"
-                    :src="'/img/portfolio-' + item.imageUrl + '.png'"
-                  />
-                </div>
-                <div
-                  class="w-full flex flex-col gap-2 items-center text-sm md:text-base lg:text-lg"
-                >
-                  <div class="title-text font-medium text-secondary">
-                    {{ item.name }}
-                  </div>
-                  <div
-                    class="w-full text-left text-[10px] text-[#c1c1c1] md:text-xs lg:text-sm"
-                  >
-                    {{ item.status }}
-                  </div>
-                  <!-- <div
-                    class="w-full mt-4 text-normal text-sm text-left text-amber-200"
-                  >
-                    {{ item.tech }}
-                  </div> -->
-                  <div class="w-full flex justify-end">
-                    <div
-                      class="flex cursor-pointer items-end gap-2 text-primary"
-                    >
-                      <a
-                        v-if="item.github !== 'null'"
-                        :href="item.github"
-                        target="_blank"
-                        rel="noreferrer"
-                        title="View github repository"
-                        class="transition-all hover:text-accent"
-                      >
-                        <svg
-                          stroke="currentColor"
-                          fill="none"
-                          stroke-width="2"
-                          viewBox="0 0 24 24"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          height="16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                          ></path></svg
-                      ></a>
-                      <a
-                        v-if="item.demo !== 'null'"
-                        :href="item.demo"
-                        target="_blank"
-                        rel="noreferrer"
-                        title="View finished project"
-                        class="transition-all hover:text-accent"
-                      >
-                        <svg
-                          stroke="currentColor"
-                          fill="none"
-                          stroke-width="2"
-                          viewBox="0 0 24 24"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          height="18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                          ></path>
-                          <polyline points="15 3 21 3 21 9"></polyline>
-                          <line x1="10" y1="14" x2="21" y2="3"></line></svg
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
-</template>
 
-<style>
-.item-card:hover {
-  transition: transform 0.3s ease;
-  transform: translateY(-8px);
-}
-svg:hover {
-  stroke: #ffdb70;
-}
-@keyframes fadeZoomIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Menggunakan animasi pada elemen yang diinginkan */
-.fade-zoom-in {
-  animation: fadeZoomIn 1s ease-in-out;
-}
+<style scoped>
+.work-page { padding: 1rem 0 3rem; text-align: left; }.section-heading { margin-bottom: 1.2rem; }.section-title { margin: 0; color: var(--text); font-family: 'Poppins'; font-size: clamp(2.2rem, 5vw, 4.4rem); font-weight: 600; letter-spacing: -.07em; line-height: 1; }.section-title span { color: var(--accent); }
+.portfolio-carousel { outline: 0; }.carousel-stage { position: relative; height: min(54vw, 480px); min-height: 300px; margin: 0 auto; touch-action: pan-y; user-select: none; }.project-slide { position: absolute; top: 0; left: 50%; width: min(72%, 650px); height: 100%; padding: .55rem; border-radius: 24px; transform: translateX(calc(-50% + (var(--card-offset) * 58px))) scale(var(--card-scale)) rotate(calc(var(--card-offset) * -2deg)); transform-origin: center bottom; transition: transform .5s cubic-bezier(.2,.8,.2,1), opacity .35s ease, filter .5s ease; cursor: pointer; }.project-slide:not(.active) { filter: saturate(.65) brightness(.7); }.project-slide.active { cursor: grab; }.project-slide.active:active { cursor: grabbing; }.project-image { width: 100%; height: 100%; overflow: hidden; border-radius: 18px; background: var(--surface-strong); }.project-image img { display: block; width: 100%; height: 100%; object-fit: cover; }.carousel-controls { display: flex; align-items: center; justify-content: center; gap: 1.1rem; margin: .8rem 0 1rem; color: var(--muted); font-size: .72rem; }.carousel-arrow { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 50%; color: var(--text); background: var(--surface); cursor: pointer; font-size: 1.1rem; transition: background .3s ease, color .3s ease, transform .3s ease; }.carousel-arrow:hover { color: var(--accent-ink); background: var(--accent); transform: translateY(-2px); }.project-info { max-width: 760px; margin: 0 auto; padding: 1.3rem 1.5rem; border-radius: 20px; }.project-info-top, .project-info-title { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }.project-type { margin: 0 0 .45rem; color: var(--accent); font-size: .65rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }.project-year { color: var(--muted); font-size: .7rem; }.project-info h2 { margin: 0; color: var(--text); font-size: clamp(1.35rem, 3vw, 2rem); font-weight: 600; letter-spacing: -.04em; }.project-info-title a { color: var(--text); font-size: .72rem; font-weight: 600; }.project-info-title a:hover { color: var(--accent); }.project-info > p { max-width: 650px; margin: .8rem 0 1.1rem; color: var(--muted); font-size: .8rem; line-height: 1.7; }.project-dots { display: flex; flex-wrap: wrap; gap: .35rem; }.project-dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: var(--line-strong); cursor: pointer; transition: transform .3s ease, background .3s ease; }.project-dots button.active { width: 20px; border-radius: 99px; background: var(--accent); }.project-dots button:hover { transform: scale(1.3); }
+@media (max-width: 760px) { .work-page { padding-top: .5rem; }.section-heading { margin-bottom: 1rem; }.carousel-stage { height: min(68vw, 340px); min-height: 235px; }.project-slide { width: 88%; padding: .4rem; border-radius: 20px; transform: translateX(calc(-50% + (var(--card-offset) * 34px))) scale(var(--card-scale)) rotate(calc(var(--card-offset) * -2.5deg)); }.project-image { border-radius: 15px; }.project-info { padding: 1rem; border-radius: 18px; }.project-info h2 { font-size: 1.25rem; }.project-info > p { font-size: .75rem; } }
+.project-image img { object-fit: contain; padding: .5rem; }
 </style>
