@@ -10,7 +10,7 @@
         <div class="hero-meta"><span>Based in Bandung, Indonesia · Available for collaboration</span></div>
       </div>
       <div class="hero-visual">
-        <div class="profile-card glass-panel"><div class="card-topline"><span>RioAdriana();</span></div><div class="portrait-wrap"><img src="/img/yoojin.jpeg" alt="Rio Adriana" class="portrait" /></div><div class="profile-bottom"><div><strong>Web developer</strong><small>full-stack &amp; curious</small></div><span class="arrow-circle"><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" /></svg></span></div></div>
+        <div class="profile-card glass-panel"><div class="card-topline"><span>RioAdriana();</span></div><div class="portrait-wrap"><img src="/img/RioGanteng.png" alt="Rio Adriana" class="portrait" /></div><div class="profile-bottom"><div><strong>Web developer</strong><small>full-stack &amp; curious</small></div><span class="arrow-circle"><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" /></svg></span></div></div>
       </div>
     </section>
     <section class="home-note glass-panel"><p>“Programming is not only a job, but also a creative craft.”</p></section>
