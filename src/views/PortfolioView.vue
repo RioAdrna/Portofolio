@@ -35,6 +35,7 @@ export default {
         { id: 8, name: 'SmartFinance', image: '/img/portfolio-smartfinance.png', type: 'Personal finance platform', year: '2026', status: 'A finance management platform for tracking income, expenses, and everyday financial goals.', demo: 'https://smart-finance.site.je/' },
         { id: 9, name: 'Tani Bijak', image: '/img/portfolio-tanibijak.jpeg', type: 'Agriculture platform', year: '2026', status: 'A digital platform that supports smarter farming decisions and agricultural information.', demo: 'null' },
         { id: 10, name: 'PresenPro', image: '/img/portfolio-presenpro.png', type: 'Dynamic QR attendance system', year: '2026', status: 'An attendance system that uses dynamic QR codes to make check-ins more secure, practical, and easy to monitor.', demo: 'https://presen-pro.page.gd/login' },
+        { id: 11, name: 'Svara', image: '/img/portfolio-svara.png', type: 'AI heart disease analysis app', year: '2026', status: 'An AI-powered mobile application that analyzes health data to help assess potential heart disease risk.', demo: 'null' },
       ],
     };
   },
