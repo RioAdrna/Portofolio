@@ -107,7 +107,7 @@ button, input, textarea { font: inherit; } button, a { -webkit-tap-highlight-col
 .site-header { position: sticky; z-index: 20; top: 1rem; width: min(1120px, calc(100% - 2rem)); margin: 1rem auto 0; border-radius: 22px; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 68px; padding: .65rem .7rem .65rem 1rem; }
 .brand { display: inline-flex; align-items: center; gap: .6rem; padding: 0; border: 0; color: var(--text); background: transparent; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: -.04em; font-size: .96rem; }
-.brand-mark { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 11px; color: #17140c; background: var(--accent); box-shadow: 0 6px 17px rgba(255, 219, 112, .18); font-size: .9rem; object-fit: cover; }
+.brand-mark { display: block; flex: 0 0 32px; width: 32px; height: 32px; padding: 3px; border-radius: 11px; background: var(--accent); box-shadow: 0 6px 17px rgba(255, 219, 112, .18); object-fit: contain; }
 .brand-caret { color: var(--accent); } .desktop-nav { display: flex; align-items: center; gap: .2rem; padding: .25rem; border: 1px solid var(--line); border-radius: 15px; background: rgba(0, 0, 0, .08); }
 .desktop-nav a { padding: .55rem .9rem; border-radius: 11px; color: var(--muted); font-size: .82rem; font-weight: 600; transition: color .3s ease, background .3s ease, transform .3s ease; }
 .desktop-nav a:hover { color: var(--text); transform: translateY(-1px); } .desktop-nav a.router-link-exact-active { color: var(--text); background: var(--surface-hover); box-shadow: 0 3px 12px rgba(0,0,0,.08); }
