@@ -32,9 +32,9 @@ export default {
         { id: 5, name: 'PSAB', image: '/img/portfolio-psab.png', type: 'Environmental monitoring', year: '2022', status: 'A real-time monitoring system for river cleanliness and clean water conditions.', demo: 'null' },
         { id: 6, name: 'LingkunganKu', image: '/img/portfolio-lingkunganku.png', type: 'Public service', year: '2022', status: 'A public complaint platform for reporting environmental issues nearby.', demo: 'null' },
         { id: 7, name: 'StuntCheck', image: '/img/portfolio-stuntcheck.png', type: 'AI-powered health system', year: '2024', status: 'Early stunting risk detection through digital anthropometric analysis.', demo: 'null' },
-        { id: 8, name: 'SmartFinance', image: '/img/portfolio-smartfinance.png', type: 'Personal finance platform', year: '2026', status: 'A finance management platform for tracking income, expenses, and everyday financial goals.', demo: 'null' },
+        { id: 8, name: 'SmartFinance', image: '/img/portfolio-smartfinance.png', type: 'Personal finance platform', year: '2026', status: 'A finance management platform for tracking income, expenses, and everyday financial goals.', demo: 'https://smart-finance.site.je/' },
         { id: 9, name: 'Tani Bijak', image: '/img/portfolio-tanibijak.jpeg', type: 'Agriculture platform', year: '2026', status: 'A digital platform that supports smarter farming decisions and agricultural information.', demo: 'null' },
-        { id: 10, name: 'PresenPro', image: '/img/portfolio-presenpro.png', type: 'Dynamic QR attendance system', year: '2026', status: 'An attendance system that uses dynamic QR codes to make check-ins more secure, practical, and easy to monitor.', demo: 'null' },
+        { id: 10, name: 'PresenPro', image: '/img/portfolio-presenpro.png', type: 'Dynamic QR attendance system', year: '2026', status: 'An attendance system that uses dynamic QR codes to make check-ins more secure, practical, and easy to monitor.', demo: 'https://presen-pro.page.gd/login' },
       ],
     };
   },
