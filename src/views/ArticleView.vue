@@ -2,7 +2,7 @@
   <main class="article-page">
     <div v-if="isLoading" class="state-card glass-panel">Loading article<span class="loading-dots">...</span></div>
     <div v-else-if="error" class="state-card glass-panel error-state">{{ error }}</div>
-    <article v-else class="article-card glass-panel"><router-link to="/portfolio" class="back-link">← Back to work</router-link><p class="article-date">{{ date }}</p><h1>{{ title }}</h1><div class="article-image"><img :src="image" alt="Article thumbnail" /></div><div class="article-content" v-html="content"></div></article>
+    <article v-else class="article-card glass-panel"><router-link to="/portfolio" class="back-link"><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3M7 4l-4 4 4 4" /></svg> Back to work</router-link><p class="article-date">{{ date }}</p><h1>{{ title }}</h1><div class="article-image"><img :src="image" alt="Article thumbnail" /></div><div class="article-content" v-html="content"></div></article>
   </main>
 </template>
 
